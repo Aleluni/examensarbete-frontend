@@ -1,0 +1,17 @@
+<p>xyz works!</p>
+<div style="text-align: center">
+  <form #usersForm="ngForm" (ngSubmit)="postData(usersForm.value)">
+    <input type="text" ngModel name="username" placeholder="enter name" />
+    <br />
+    <input type="text" ngModel name="password" placeholder="enter password" />
+    <br />
+    <input type="text" ngModel name="recipe" placeholder="enter recipe link" />
+    <br />
+    <input type="text" ngModel name="comment" placeholder="enter comment" />
+    <br />
+    <input type="number" ngModel name="rating" placeholder="enter rating" />
+    <br />
+    <input type="checkbox" ngModel name="isAdmin" />
+    <button>post Data</button>
+  </form>
+</div>
