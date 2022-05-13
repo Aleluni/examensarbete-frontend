@@ -7,12 +7,14 @@ import { XyzComponent } from './xyz/xyz.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
 
   ],
   imports: [

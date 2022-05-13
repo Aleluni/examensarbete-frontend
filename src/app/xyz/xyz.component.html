@@ -1,10 +1,19 @@
 <div style="text-align: center">
   <form #usersForm="ngForm" (ngSubmit)="postData(usersForm.value)">
+    <label></label>
     <input type="text" ngModel name="recipe" placeholder="enter recipe link" />
     <br />
+    <label></label>
     <input type="text" ngModel name="comment" placeholder="enter comment" />
     <br />
-    <input type="number" ngModel name="rating" placeholder="enter rating" />
+    <input
+      type="number"
+      ngModel
+      name="rating"
+      placeholder="enter rating"
+      min="1"
+      max="5"
+    />
     <br />
     <button>post Data</button>
   </form>
