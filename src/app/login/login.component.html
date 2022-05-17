@@ -1,4 +1,4 @@
-<form>
+<form role="form" (submit)="login()">
   <div class="form-group">
     <label for="exampleInputEmail1">Usernames</label>
     <input
@@ -7,6 +7,8 @@
       id="exampleInputEmail1"
       aria-describedby="emailHelp"
       placeholder="Enter email"
+      name="username"
+      [(ngModel)]="credentials.username"
     />
     <small id="emailHelp" class="form-text text-muted">Welcome in</small>
   </div>
@@ -17,6 +19,8 @@
       class="form-control"
       id="exampleInputPassword1"
       placeholder="Password"
+      name="password"
+      [(ngModel)]="credentials.password"
     />
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>

@@ -15,7 +15,7 @@ export class XyzComponent {
   postData(data:any){
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8')
-    const url = 'http://localhost:8080/api/post'
+    const url = 'http://localhost:8080/api/recipepost'
 
     console.log(data)
 
