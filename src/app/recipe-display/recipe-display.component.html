@@ -1,2 +1,17 @@
 <p>recipe-display works!</p>
-<button (click)="getData()">Press this</button>
+<button>Press this</button>
+<div>
+    <thead><tr>
+        <th>recipeLink</th>
+        <th>comment</th>
+        <th>rating</th>
+    </tr></thead>
+    <tbody>
+        <tr *ngFor="let recipe of recipes">
+            <td><span>{{recipe.recipeLink}}</span></td>
+            <td><span>{{recipe.comment}}</span></td>
+            <td><span>{{recipe.rating}}</span></td>
+
+        </tr>
+    </tbody>
+</div>

@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { Recipe } from '../recipe';
 
 @Component({
   selector: 'app-recipe-display',
@@ -8,16 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeDisplayComponent  {
 
-  constructor(private http:HttpClient){}
+  recipes !: Recipe[];
 
-  getData(){
-    let headers = new HttpHeaders();
-    headers = headers.set('Content-Type','application/json; charset=utf-8')
-    const url = 'http://localhost:8080/api/getrecipe'
-
-    this.http.get<any>(url,{headers:headers}).subscribe((result)=>{
-      console.warn("result",result)
-    })
+  constructor(private api:ApiService, private http:HttpClient){}
+  
   }
 
-}
