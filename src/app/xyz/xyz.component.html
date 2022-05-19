@@ -1,7 +1,12 @@
 <div style="text-align: center">
   <form #usersForm="ngForm" (ngSubmit)="postData(usersForm.value)">
     <label></label>
-    <input type="text" ngModel name="recipe" placeholder="enter recipe link" />
+    <input
+      type="url"
+      ngModel
+      name="recipeLink"
+      placeholder="enter recipe link"
+    />
     <br />
     <label></label>
     <input type="text" ngModel name="comment" placeholder="enter comment" />

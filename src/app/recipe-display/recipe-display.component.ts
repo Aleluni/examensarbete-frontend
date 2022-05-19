@@ -8,11 +8,20 @@ import { Recipe } from '../recipe';
   templateUrl: './recipe-display.component.html',
   styleUrls: ['./recipe-display.component.css']
 })
-export class RecipeDisplayComponent  {
+export class RecipeDisplayComponent implements OnInit  {
 
   recipes !: Recipe[];
 
   constructor(private api:ApiService, private http:HttpClient){}
+  ngOnInit(): void {
+    this.getRecipes();
+  }
   
+  getRecipes(){
+    this.http.get<any>('http://localhost:8080/api/getrecipe').subscribe(resp => {
+      console.log(resp)
+      this.recipes = resp;
+    })
+  }
   }
 

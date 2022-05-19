@@ -1,17 +1,24 @@
-<p>recipe-display works!</p>
-<button>Press this</button>
 <div>
-    <thead><tr>
-        <th>recipeLink</th>
-        <th>comment</th>
-        <th>rating</th>
-    </tr></thead>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">recipe link</th>
+        <th scope="col">comment</th>
+        <th scope="col">rating</th>
+      </tr>
+    </thead>
     <tbody>
-        <tr *ngFor="let recipe of recipes">
-            <td><span>{{recipe.recipeLink}}</span></td>
-            <td><span>{{recipe.comment}}</span></td>
-            <td><span>{{recipe.rating}}</span></td>
-
-        </tr>
+      <tr *ngFor="let recipe of recipes">
+        <td>
+          <a>{{ recipe.recipeLink }}</a>
+        </td>
+        <td>
+          <span>{{ recipe.comment }}</span>
+        </td>
+        <td>
+          <span>{{ recipe.rating }}</span>
+        </td>
+      </tr>
     </tbody>
+  </table>
 </div>

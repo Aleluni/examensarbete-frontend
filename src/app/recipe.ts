@@ -1,7 +1,7 @@
 export class Recipe {
-
-    recipeLink!: String;
-    comment!: String;
-    rating!: number;
+    constructor(
+    public recipeLink: string,
+    public comment: string,
+    public rating: number){}
 
 }
