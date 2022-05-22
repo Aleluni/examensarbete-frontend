@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, JsonpClientBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Recipe } from '../recipe';
@@ -9,6 +9,8 @@ import { Recipe } from '../recipe';
   styleUrls: ['./recipe-display.component.css']
 })
 export class RecipeDisplayComponent implements OnInit  {
+
+
 
   recipes !: Recipe[];
 
@@ -23,5 +25,46 @@ export class RecipeDisplayComponent implements OnInit  {
       this.recipes = resp;
     })
   }
-  }
 
+  postData(){
+    let data = localStorage.getItem('localList');
+    //let data = {"recipeLink":"https://www.ica.se/recept/gronsaksplat-med-kyckling-och-tzatziki-728523/"}
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type','application/json; charset=utf-8')
+    const url = 'http://localhost:3000/test'
+
+    console.log(data)
+
+    this.http.post(url,data,{headers:headers}).subscribe((result)=>{
+      console.warn("Result",result)
+    })
+    localStorage.clear()
+  }
+    
+  itemList:any=[];
+  addTolist(prod:Recipe){
+    console.log(prod.recipeLink);
+    let listData = localStorage.getItem('localList');
+
+    if(listData == null){
+      let storeDataGet:any = [];
+      storeDataGet.push(prod.recipeLink);
+      localStorage.setItem('localList',JSON.stringify(storeDataGet));
+    }else{
+      var id = prod.recipeLink;
+      let index:number = -1;
+      this.itemList = JSON.parse(localStorage.getItem('localList')!);
+
+        if(index == -1){
+          this.itemList.push(prod.recipeLink);
+          localStorage.setItem('localList',JSON.stringify(this.itemList))
+        }else{
+          localStorage.setItem('localList',JSON.stringify(this.itemList))
+        }
+        
+      }
+      console.log("this is the local list"+ localStorage.getItem('localList'));
+    }
+
+    //console.log(localStorage.getItem);
+  }

@@ -9,16 +9,17 @@
     </thead>
     <tbody>
       <tr *ngFor="let recipe of recipes">
-        <td>
-          <a>{{ recipe.recipeLink }}</a>
-        </td>
+        <td><link />{{ recipe.recipeLink }}<link /></td>
         <td>
           <span>{{ recipe.comment }}</span>
         </td>
         <td>
           <span>{{ recipe.rating }}</span>
         </td>
+        <button (click)="addTolist(recipe)">i want to eat this</button>
       </tr>
     </tbody>
   </table>
+
+  <button (click)="postData()">POST DATA TEST</button>
 </div>
