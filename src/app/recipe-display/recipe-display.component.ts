@@ -63,6 +63,7 @@ export class RecipeDisplayComponent implements OnInit  {
         }
         
       }
+      alert("item was added");
       console.log("this is the local list"+ localStorage.getItem('localList'));
     }
 
