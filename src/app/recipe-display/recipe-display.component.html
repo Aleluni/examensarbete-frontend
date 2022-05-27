@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <table class="table table-dark">
     <thead>
       <tr>
@@ -16,10 +16,10 @@
         <td>
           <span>{{ recipe.rating }}</span>
         </td>
-        <button (click)="addTolist(recipe)">i want to eat this</button>
+        <button (click)="addTolist(recipe)" type="button" class="btn btn-primary">i want to eat this</button>
       </tr>
     </tbody>
   </table>
 
-  <button (click)="postData()">SEND ME RECIPE</button>
+  <button (click)="postData()" class="btn btn-success">SEND ME RECIPE</button>
 </div>

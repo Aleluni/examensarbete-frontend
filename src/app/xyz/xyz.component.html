@@ -1,6 +1,6 @@
 
   <div class="container">
-  <form #usersForm="ngForm" (ngSubmit)="postData(usersForm.value)">
+  <form #usersForm="ngForm" (ngSubmit)="postData(usersForm.value); usersForm.reset()">
     <div class="form-group" max-width="50%">
     <label></label>
     <input
@@ -16,7 +16,7 @@
     <br />
     <ngb-rating [max]="5" [(rate)]="currentRating" [readonly]="false" ngModel name="rating"></ngb-rating>
     <p>rating : {{currentRating}}</p>
-    <button>post Data</button>
+    <button type="button" class="btn btn-success">Add recipe</button>
   </div>
   </form>
 </div>

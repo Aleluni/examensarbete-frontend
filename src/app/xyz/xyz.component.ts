@@ -23,7 +23,6 @@ export class XyzComponent {
 
     this.http.post(url,data,{headers:headers}).subscribe((result)=>{
       console.warn("Result",result)
-      alert("your recipe has been added")
     })
   }
 
