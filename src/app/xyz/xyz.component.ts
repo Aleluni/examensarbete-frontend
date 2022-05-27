@@ -10,6 +10,8 @@ import{HttpClient,HttpHeaders} from '@angular/common/http'
 export class XyzComponent {
   
   constructor(private http:HttpClient) {}
+
+  currentRating = 2;
   
 
   postData(data:any){
@@ -21,6 +23,7 @@ export class XyzComponent {
 
     this.http.post(url,data,{headers:headers}).subscribe((result)=>{
       console.warn("Result",result)
+      alert("your recipe has been added")
     })
   }
 

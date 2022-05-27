@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RecipeDisplayComponent } from './recipe-display/recipe-display.component';
 import { AppServiceService } from './app-service.service';
 import { Injectable } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -36,7 +37,8 @@ export class XhrInterceptor implements HttpInterceptor {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [AppServiceService,{provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi:true}],
   bootstrap: [AppComponent]

@@ -1,25 +1,23 @@
-<div style="text-align: center">
+
+  <div class="container">
   <form #usersForm="ngForm" (ngSubmit)="postData(usersForm.value)">
+    <div class="form-group" max-width="50%">
     <label></label>
     <input
       type="url"
       ngModel
       name="recipeLink"
       placeholder="enter recipe link"
+      class="form-control"
     />
     <br />
     <label></label>
-    <input type="text" ngModel name="comment" placeholder="enter comment" />
+    <input type="text" ngModel name="comment" placeholder="enter comment" class="form-control" />
     <br />
-    <input
-      type="number"
-      ngModel
-      name="rating"
-      placeholder="rating"
-      min="1"
-      max="5"
-    />
-    <br />
+    <ngb-rating [max]="5" [(rate)]="currentRating" [readonly]="false" ngModel name="rating"></ngb-rating>
+    <p>rating : {{currentRating}}</p>
     <button>post Data</button>
+  </div>
   </form>
 </div>
+
